@@ -25,8 +25,16 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-  <!-- File CSS -->
+  <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Append
+  * Updated: Jun 20 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/append-bootstrap-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body class="menu-page" data-bs-spy="scroll" data-bs-target="#navmenu">
@@ -48,7 +56,7 @@
           <li><a href="index2.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="keranjang.html">Keranjang</a></li>
-          <li><a href="riwayat.html">Riwayat</a></li>
+          <li><a href="index2.html#riwayat">Riwayat</a></li>
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -56,97 +64,80 @@
 
     </div>
   </header><!-- End Header -->
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  <main id="main">
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-    <!-- Menu Page Title & Breadcrumbs -->
-    <div data-aos="fade" class="page-title">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>Menu</h1>
-              <p class="mb-0">Apa yang ingin anda pesan hari ini? Silahkan memilih menu dibawah ini. Enjoy Your Meal ^_^</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="index2.html">Home</a></li>
-            <li><a href="keranjang.html">Keranjang</a></li>
-          </ol>
-        </div>
-      </nav>
-    </div><!-- End Page Title -->
+h1 {
+  text-align: center;
+}
 
-    <!-- Menu Section - Menu Page -->
-    <section id="menu" class="menu">
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
 
-        <div class="row gy-4 posts-list">
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
 
-          <div class="col-xl-4 col-lg-6">
-            <article>
+.empty-message {
+  text-align: center;
+}
 
-              <div class="post-img">
-                <img src="assets/img/menu/soto.png" alt="" class="img-fluid">
-              </div>
+  </style>
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Tanggal</th>
+          <th>Nama Makanan</th>
+          <th>Jumlah</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2023-07-18</td>
+          <td>Nasi Goreng</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2023-07-19</td>
+          <td>Mie Ayam</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>2023-07-20</td>
+          <td>Sate Ayam</td>
+          <td>4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-              <p class="post-category">Food</p>
-
-              <h2 class="title">
-                <a href="menu-details.html">Makanan</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="assets/img/menu/logo-unair.png" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Airlangga's Canteen</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">July 20, 2023</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-lg-6">
-            <article>
-
-              <div class="post-img">
-                <img src="assets/img/menu/tehh.jpg" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Beverage</p>
-
-              <h2 class="title">
-                <a href="menu-details2.html">Minuman</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="assets/img/menu/logo-unair.png" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Airlangga's Canteen</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">July 20, 2023</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-        </div><!-- End Menu posts list -->
-
-      </div>
-
-    </section><!-- End Menu Section -->
-
-  </main>
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
