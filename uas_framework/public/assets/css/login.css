@@ -31,9 +31,23 @@ main img {
     max-width: 376px;
 }
 
+.kembali-input{
+    margin-top: 32px;
+    padding: 8px 32px;
+    background-color: #e6d11d;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #081b33;
+    font-weight: normal;
+    text-transform: uppercase;
+    float: right;
+    cursor: pointer;
+}
+
 .login-input {
     padding: 32px;
-    background-color: rgb(30, 63, 117);
+    background-color: rgb(51, 56, 63);
     font-size: medium;
     color: #ffffff;
     border-radius: 10px;
@@ -63,6 +77,23 @@ main img {
     text-transform: uppercase;
     float: right;
     cursor: pointer;
+}
+
+#buttonBack {
+    margin-right: 10px;
+}
+
+#buttonLogin {
+    margin-left: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container button {
+    margin: 0;
 }
 
 .pop-up-modal {

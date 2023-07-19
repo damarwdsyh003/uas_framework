@@ -1,55 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsersC;
-use App\Http\Controllers\MakananC;
-use App\Http\Controllers\MinumanC;
-use App\Http\Controllers\TenantC;
-use App\Http\Controllers\PemesananC;
-use App\Http\Controllers\PembayaranC;
+use App\Http\Controllers\MakananController;
+use App\Http\Controllers\MinumanController;
+use App\Http\Controllers\TenantController;
+use App\Http\Controllers\PemesananController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\AuthManager;
 
 // HOME
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 
-// LOGIN-REGIS-LOGOUT
-Route::post('/login', [UsersController::class, 'login'])->name('login');
-Route::post('/login1', [UsersController::class, 'login1'])->name('login1');
-Route::post('/register1', [UsersController::class, 'register1']);
-Route::post('/register2', [UsersController::class, 'register2'])->name('register2');
-Route::post('/register3', [UsersController::class, 'register3'])->name('register3');
-Route::post('/register4', [UsersController::class, 'register4'])->name('register4');
-Route::post('/logout', [UsersController::class, 'logout'])->name('logout');
-Route::get('/profile', [UsersController::class, 'getprofile'])->name('profile');
-Route::get('/profile-admin', [UsersController::class, 'getprofileadmin'])->name('profile.admin');
-Route::get('/authenticated-user', [UsersController::class, 'getAuthenticatedUser'])->name('authenticated.user');
+// HOME 2
+Route::get('/home', [HomeController::class, 'home'])->name('home');
 
-// Admin
-Route::get('/admin', [UsersController::class, 'showadmin'])->name('admin');
-Route::get('/admin/{id}/edit', [UsersController::class, 'showeditadmin'])->name('admin.edit');
-Route::put('/admin/{id}', [UsersController::class, 'editadmin'])->name('admin.update');
-Route::delete('/admin/{id}', [UsersController::class, 'hapusadmin'])->name('admin.delete');
-
-// Staf
-Route::get('/staf', [UsersController::class, 'showstaf'])->name('staf');
-Route::get('/staf/{id}/edit', [UsersController::class, 'showeditstaf'])->name('staf.edit');
-Route::put('/staf/{id}', [UsersController::class, 'editstaf'])->name('staf.update');
-Route::delete('/staf/{id}', [UsersController::class, 'hapusstaf'])->name('staf.delete');
-
-// Civitas Akademik
-Route::get('/civitas-akademik', [UsersController::class, 'showcivitas_akademik'])->name('civitas-akademik');
-Route::get('/civitas-akademik/{id}/edit', [UsersController::class, 'showeditcivitas_akademik'])->name('civitas-akademik.edit');
-Route::put('/civitas-akademik/{id}', [UsersController::class, 'editcivitas_akademik'])->name('civitas-akademik.update');
-Route::delete('/civitas-akademik/{id}', [UsersController::class, 'hapuscivitas_akademik'])->name('civitas-akademik.delete');
-
-// Pelanggan
-Route::get('/pelanggan', [UsersController::class, 'showpelanggan'])->name('pelanggan');
-Route::get('/pelanggan/{id}/edit', [UsersController::class, 'showeditpelanggan'])->name('pelanggan.edit');
-Route::put('/pelanggan/{id}', [UsersController::class, 'editpelanggan'])->name('pelanggan.update');
-Route::delete('/pelanggan/{id}', [UsersController::class, 'hapuspelanggan'])->name('pelanggan.delete');
-
-// Halaman Login
-Route::get('/login', [UsersController::class, 'halamanlogin'])->name('login');
+Route::post('/halamanlogin', [AuthManager::class, 'loginPost'])->name('login.post');
+Route::post('/halamanregister', [AuthManager::class, 'registerPost'])->name('register.post');
+Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
+Route::get('/halamanlogin', [AuthManager::class, 'halamanlogin'])->name('halamanlogin');
+Route::get('/halamanregister', [AuthManager::class, 'halamanregister'])->name('halamanregister');
 
 // Makanan
 Route::middleware(['auth'])->group(function () {
