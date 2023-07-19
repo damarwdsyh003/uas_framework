@@ -8,7 +8,7 @@ use App\Models\Pemesanan;
 use Carbon\Carbon;
 use DB;
 
-class PembayaranC extends Controller
+class PembayaranController extends Controller
 {
     public function index()
     {

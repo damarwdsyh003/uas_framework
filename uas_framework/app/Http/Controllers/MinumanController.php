@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\models\Minuman;
 use DB;
 
-class MinumanC extends Controller
+class MinumanController extends Controller
 {
     public function index()
     {

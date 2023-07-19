@@ -9,7 +9,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use DB;
 
-class PemesananC extends Controller
+class PemesananController extends Controller
 {
     public function index()
     {

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\models\Makanan;
 use DB;
 
-class MakananC extends Controller
+class MakananController extends Controller
 {
     public function index()
     {

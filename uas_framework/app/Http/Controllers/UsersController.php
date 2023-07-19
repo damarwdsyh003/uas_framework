@@ -14,7 +14,7 @@ use Auth;
 use DB;
 use Alert;
 
-class UsersC extends Controller
+class UsersController extends Controller
 {
     public function login(Request $req)
     {
