@@ -17,10 +17,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table="users";
+    protected $primaryKey="id_users";
     protected $fillable = [
-        'name',
+        'nama',
         'email',
         'password',
+        'no_hp',
+        'role',
     ];
 
     /**
@@ -33,13 +37,12 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
+    public function getJWTIdentifier(){
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return[];
+    }
 }
