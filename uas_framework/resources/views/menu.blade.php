@@ -25,16 +25,8 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- File CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Append
-  * Updated: Jun 20 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/append-bootstrap-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="menu-page" data-bs-spy="scroll" data-bs-target="#navmenu">
@@ -43,7 +35,7 @@
   <header id="header" class="header sticky-top d-flex align-items-center">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="index2.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Airlangga's Canteen</h1>
@@ -53,16 +45,14 @@
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero" class="active">Home</a></li>
+          <li><a href="index2.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
-          <li><a href="index.html#keranjang">Keranjang</a></li>
-          <li><a href="index.html#riwayat">Riwayat</a></li>
+          <li><a href="keranjang.html">Keranjang</a></li>
+          <li><a href="riwayat.html">Riwayat</a></li>
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav><!-- End Nav Menu -->
-
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
 
     </div>
   </header><!-- End Header -->
@@ -76,7 +66,7 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1>Menu</h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <p class="mb-0">Apa yang ingin anda pesan hari ini? Silahkan memilih menu dibawah ini. Enjoy Your Meal ^_^</p>
             </div>
           </div>
         </div>
@@ -84,8 +74,8 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#keranjang">Keranjang</a></li>
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="keranjang.html">Keranjang</a></li>
           </ol>
         </div>
       </nav>
@@ -134,7 +124,7 @@
               <p class="post-category">Beverage</p>
 
               <h2 class="title">
-                <a href="menu-details.html">Minuman</a>
+                <a href="menu-details2.html">Minuman</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -157,7 +147,6 @@
     </section><!-- End Menu Section -->
 
   </main>
-
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
@@ -165,60 +154,29 @@
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span>Airlangga's Canteen</span>
+            <span>Airlanga's Canteen</span>
           </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/unair_official"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/universitasairlangga"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/univ_airlangga"><i class="bi bi-instagram"></i></a>
           </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <p>Jl. Airlangga No.4 - 6, Airlangga, Kec. Gubeng, Kota SBY</p>
+          <p>Jawa Timur, 60115</p>
+          <p>Indonesia</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>(031) 5915551</span></p>
+          <p><strong>Email:</strong> <span>adm@pkip.unair.ac.id</span></p>
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>&copy; <span>Copyright</span> <strong class="px-1">Append</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+      <p>&copy; <span>Copyright</span> <strong class="px-1">Airlangga's Canteen</strong> <span>All Rights Reserved</span></p>
     </div>
 
   </footer><!-- End Footer -->
@@ -247,5 +205,4 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
