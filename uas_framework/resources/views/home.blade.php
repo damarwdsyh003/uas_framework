@@ -53,9 +53,9 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{ route('home')}}" class="active">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="keranjang.html">Keranjang</a></li>
-          <li><a href="riwayat.html">Riwayat</a></li>
+          <li><a href="{{ route('menu')}}">Menu</a></li>
+          <li><a href="{{ route('keranjang')}}">Keranjang</a></li>
+          <li><a href="{{ route('riwayat')}}">Riwayat</a></li>
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

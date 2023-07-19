@@ -16,6 +16,15 @@ Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 // HOME 2
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 
+// MENU
+Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
+
+// KERANJANG
+Route::get('/keranjang', [HomeController::class, 'keranjang'])->name('keranjang');
+
+// RIWAYAT
+Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
+
 Route::post('/halamanlogin', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::post('/halamanregister', [AuthManager::class, 'registerPost'])->name('register.post');
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
