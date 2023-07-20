@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('pemesanan', function (Blueprint $table) {
             $table->BigIncrements('id_pemesanan');
             $table->unsignedBigInteger('id_users');
-            $table->unsignedBigInteger('id_tenant');
+            $table->unsignedBigInteger('id_makanan');
+            $table->unsignedBigInteger('id_minuman');
             $table->date('tgl_pemesanan');
             $table->timestamps();
 
             $table->foreign('id_users')->references('id_users')->on('users');
-            $table->foreign('id_tenant')->references('id_tenant')->on('tenant');
+            $table->foreign('id_makanan')->references('id_makanan')->on('makanan');
+            $table->foreign('id_minuman')->references('id_minuman')->on('minuman');
         });
     }
 

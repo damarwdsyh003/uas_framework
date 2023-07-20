@@ -15,16 +15,24 @@ class Pemesanan extends Model
     protected $primaryKey="id_pemesanan";
     protected $fillable=[
         'tgl_pemesanan',
-        'id_tenant',
+        'id_makanan',
+        'id_minuman',
         'id_users',
     ];
 
-    public function tenant()
+    // Pemesanan.php
+
+    public function makanan()
     {
-        return $this->belongsto('App\Models\Tenant', 'id_tenant', 'id_tenant');
+        return $this->belongsTo('App\Models\Makanan', 'id_makanan', 'id_makanan');
     }
 
     public function minuman()
+    {
+        return $this->belongsto('App\Models\Minuman', 'id_minuman', 'id_minuman');
+    }
+
+    public function users()
     {
         return $this->belongsto('App\Models\Users', 'id_users', 'id_users');
     }

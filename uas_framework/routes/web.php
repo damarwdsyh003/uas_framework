@@ -19,8 +19,31 @@ Route::get('/home', [HomeController::class, 'home'])->name('home');
 // MENU
 Route::get('/menu', [HomeController::class, 'menu'])->name('menu');
 
+// MENU MAKANAN
+Route::get('/menumakan', [MakananController::class, 'index'])->name('menumakan');
+
+// MENU MINUMAN
+Route::get('/menuminum', [MinumanController::class, 'index'])->name('menuminum');
+
+// // KERANJANG
+// Route::get('/keranjang', [HomeController::class, 'keranjang'])->name('keranjang');
+// Route::get('/showkeranjang', [PemesananController::class, 'showKeranjang'])->name('showkeranjang');
+
+// // Route for keranjang() in PemesananController
+// Route::get('/keranjang/all', [PemesananController::class, 'keranjang'])->name('keranjang.all');
+
 // KERANJANG
 Route::get('/keranjang', [HomeController::class, 'keranjang'])->name('keranjang');
+
+// Route for showKeranjang() in PemesananController
+Route::get('/showkeranjang', [PemesananController::class, 'showKeranjang'])->name('showkeranjang');
+
+// Route for keranjang() in PemesananController
+Route::get('/keranjang/all', [PemesananController::class, 'keranjang'])->name('keranjang.all');
+
+
+// ADD TO CHART
+Route::post('/add-to-cart/{id_makanan}', [PemesananController::class, 'addToCart']);
 
 // RIWAYAT
 Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
@@ -32,47 +55,36 @@ Route::get('/halamanlogin', [AuthManager::class, 'halamanlogin'])->name('halaman
 Route::get('/halamanregister', [AuthManager::class, 'halamanregister'])->name('halamanregister');
 
 // Makanan
-Route::middleware(['auth'])->group(function () {
-    Route::get('/makanan', [MakananController::class, 'index'])->name('makanan.index');
-    Route::get('/makanan/create', [MakananController::class, 'create'])->name('makanan.create');
-    Route::post('/makanan', [MakananController::class, 'store'])->name('makanan.store');
-    Route::get('/makanan/{makanan}/edit', [MakananController::class, 'edit'])->name('makanan.edit');
-    Route::put('/makanan/{makanan}', [MakananController::class, 'update'])->name('makanan.update');
-    Route::delete('/makanan/{makanan}', [MakananController::class, 'destroy'])->name('makanan.destroy');
-});
+Route::get('/makanan', [MakananController::class, 'index']);
+Route::get('/makanan/{id_makanan}', [MakananController::class, 'show']);
 
 // Minuman
-Route::middleware(['auth'])->group(function () {
-    Route::get('/minuman', [MinumanController::class, 'index'])->name('minuman.index');
-    Route::get('/minuman/create', [MinumanController::class, 'create'])->name('minuman.create');
-    Route::post('/minuman', [MinumanController::class, 'store'])->name('minuman.store');
-    Route::get('/minuman/{minuman}/edit', [MinumanController::class, 'edit'])->name('minuman.edit');
-    Route::put('/minuman/{minuman}', [MinumanController::class, 'update'])->name('minuman.update');
-    Route::delete('/minuman/{minuman}', [MinumanController::class, 'destroy'])->name('minuman.destroy');
-});
+Route::get('/minuman', [MinumanController::class, 'index']);
+Route::get('/minuman/{id_minuman}', [MinumanController::class, 'show']);
 
-// Tenant
-Route::middleware(['auth'])->group(function () {
-    Route::get('/tenant', [TenantController::class, 'index'])->name('tenant.index');
-    Route::get('/tenant/create', [TenantController::class, 'create'])->name('tenant.create');
-    Route::post('/tenant', [TenantController::class, 'store'])->name('tenant.store');
-    Route::get('/tenant/{tenant}/edit', [TenantController::class, 'edit'])->name('tenant.edit');
-    Route::put('/tenant/{tenant}', [TenantController::class, 'update'])->name('tenant.update');
-    Route::delete('/tenant/{tenant}', [TenantController::class, 'destroy'])->name('tenant.destroy');
-});
+// // Tenant
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/tenant', [TenantController::class, 'index'])->name('tenant.index');
+//     Route::get('/tenant/create', [TenantController::class, 'create'])->name('tenant.create');
+//     Route::post('/tenant', [TenantController::class, 'store'])->name('tenant.store');
+//     Route::get('/tenant/{tenant}/edit', [TenantController::class, 'edit'])->name('tenant.edit');
+//     Route::put('/tenant/{tenant}', [TenantController::class, 'update'])->name('tenant.update');
+//     Route::delete('/tenant/{tenant}', [TenantController::class, 'destroy'])->name('tenant.destroy');
+// });
 
 // Pemesanan
-Route::get('/pemesanan', [PemesananController::class, 'index'])->name('pemesanan.index');
-Route::get('/pemesanan/create', [PemesananController::class, 'create'])->name('pemesanan.create');
-Route::post('/pemesanan', [PemesananController::class, 'store'])->name('pemesanan.store');
-Route::get('/pemesanan/{pemesanan}/edit', [PemesananController::class, 'edit'])->name('pemesanan.edit');
-Route::put('/pemesanan/{pemesanan}', [PemesananController::class, 'update'])->name('pemesanan.update');
-Route::delete('/pemesanan/{pemesanan}', [PemesananController::class, 'destroy'])->name('pemesanan.destroy');
+Route::post('/pemesanan', [PemesananController::class, 'store']);
+Route::put('/pemesanan/{id_pemesanan}', [PemesananController::class, 'update']);
+Route::delete('/pemesanan/{id_pemesanan}', [PemesananController::class, 'destroy']);
+Route::get('/pemesanan', [PemesananController::class, 'index']);
+Route::get('/pemesanan/{id_pemesanan}', [PemesananController::class, 'show']);
+Route::get('/pemesanan/{id_pemesanan}/makanan', [PemesananController::class, 'showMakanan']);
+Route::get('/pemesanan/{id_pemesanan}/minuman', [PemesananController::class, 'showMinuman']);
+Route::get('/pemesanan/{id_pemesanan}/users', [PemesananController::class, 'showUsers']);
 
 // Pembayaran
-Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('pembayaran.index');
-Route::get('/pembayaran/create', [PembayaranController::class, 'create'])->name('pembayaran.create');
-Route::post('/pembayaran', [PembayaranController::class, 'store'])->name('pembayaran.store');
-Route::get('/pembayaran/{pembayaran}/edit', [PembayaranController::class, 'edit'])->name('pembayaran.edit');
-Route::put('/pembayaran/{pembayaran}', [PembayaranController::class, 'update'])->name('pembayaran.update');
-Route::delete('/pembayaran/{pembayaran}', [PembayaranController::class, 'destroy'])->name('pembayaran.destroy');
+Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/pembayaran/{id_pembayaran}', [PembayaranController::class, 'show']);
+Route::post('/pembayaran', [PembayaranController::class, 'store']);
+Route::put('/pembayaran/{id_pembayaran}', [PembayaranController::class, 'update']);
+Route::delete('/pembayaran/{id_pembayaran}', [PembayaranController::class, 'destroy']);

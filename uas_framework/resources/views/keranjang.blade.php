@@ -121,7 +121,49 @@
   </style>
 </head>
 <body>
+  {{-- <section id="keranjang" class="showkeranjang">
+    <div class="container">
+        <h1>Keranjang</h1>
+        <div class="row">
+          <div class="col-md-8">
+            <ul>
+                @foreach ($makananDetails as $makanan)
+                    @if ($makanan->makanan)
+                        <li>{{ $makanan->makanan->nama_makanan }} - Rp {{ $makanan->makanan->harga_makanan }} (Jumlah: {{ $cart[$makanan->id_makanan] }})</li>
+                        <a href="#" class="checkout-button">Checkout</a>
+                    @else
+                        <li>Data makanan tidak ditemukan.</li>
+                    @endif
+                @endforeach
+            </ul>
+        </div>
+        
+        </div>        
+        </div>
+    </div>
+</section> --}}
+<section id="keranjang" class="showkeranjang">
   <div class="container">
+      <h1>Keranjang</h1>
+      <div class="row">
+          <div class="col-md-8">
+              <ul>
+                  @foreach ($makananDetails as $makanan)
+                      @if ($makanan->makanan)
+                          <li>{{ $makanan->makanan->nama_makanan }} - Rp {{ $makanan->makanan->harga_makanan }} (Jumlah: {{ $cart[$makanan->id_makanan] }})</li>
+                          <a href="{{ route('showkeranjang') }}" class="checkout-button">Checkout</a>
+                      @else
+                          <li>Data makanan tidak ditemukan.</li>
+                      @endif
+                  @endforeach
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+  {{-- <div class="container">
     <h1>Keranjang Pemesanan Makanan</h1>
     <table>
       <thead>
@@ -154,7 +196,7 @@
       </body>
     </table>
     <a href="#" class="checkout-button">Checkout</a>
-  </div>
+  </div> --}}
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">

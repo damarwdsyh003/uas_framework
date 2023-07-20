@@ -45,10 +45,10 @@
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="{{ route('home')}}">Home</a></li>
-          <li><a href="{{ route('menu')}}">Menu</a></li>
-          <li><a href="{{ route('keranjang')}}">Keranjang</a></li>
-          <li><a href="{{ route('riwayat')}}">Riwayat</a></li>
+            <li><a href="{{ route('home')}}">Home</a></li>
+            <li><a href="{{ route('menu')}}">Menu</a></li>
+            <li><a href="{{ route('keranjang')}}">Keranjang</a></li>
+            <li><a href="{{ route('riwayat')}}">Riwayat</a></li>
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -56,97 +56,88 @@
 
     </div>
   </header><!-- End Header -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  <main id="main">
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
 
-    <!-- Menu Page Title & Breadcrumbs -->
-    <div data-aos="fade" class="page-title">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>Menu</h1>
-              <p class="mb-0">Apa yang ingin anda pesan hari ini? Silahkan memilih menu dibawah ini. Enjoy Your Meal ^_^</p>
+    h1 {
+      text-align: center;
+      color: #1a5a96;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .food-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .food-name {
+      font-weight: bold;
+    }
+
+    .food-price {
+      color: #777;
+    }
+
+    .order-button {
+      background-color: #1a5a96;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .order-button:hover {
+      background-color: #1a5a96;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Menu Minuman</h1>
+    <section id="menu-makanan" class="menu-makanan">
+        <div class="container" >
+          <h1>Menu Makanan</h1>
+          <div class="row">
+            @foreach($minuman as $minumanItem)
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $minumanItem->nama_minuman }}</h5>
+                  <p class="card-text">Rp {{ $minumanItem->harga_minuman }}</p>
+                  <button class="order-button">Pesan</button>
+                </div>
+              </div>
             </div>
+            @endforeach
           </div>
         </div>
-      </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="index2.html">Home</a></li>
-            <li><a href="keranjang.html">Keranjang</a></li>
-          </ol>
-        </div>
-      </nav>
-    </div><!-- End Page Title -->
+      </section>
 
-    <!-- Menu Section - Menu Page -->
-    <section id="menu" class="menu">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 posts-list">
-
-          <div class="col-xl-4 col-lg-6">
-            <article>
-
-              <div class="post-img">
-                <img src="assets/img/menu/soto.png" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Food</p>
-
-              <h2 class="title">
-                <a href="{{ url('menumakan')}}">Makanan</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="assets/img/menu/logo-unair.png" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Airlangga's Canteen</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">July 20, 2023</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-lg-6">
-            <article>
-
-              <div class="post-img">
-                <img src="assets/img/menu/tehh.jpg" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Beverage</p>
-
-              <h2 class="title">
-                <a href="{{ url('menuminum')}}">Minuman</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="assets/img/menu/logo-unair.png" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Airlangga's Canteen</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">July 20, 2023</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-        </div><!-- End Menu posts list -->
-
-      </div>
-
-    </section><!-- End Menu Section -->
-
-  </main>
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
