@@ -56,7 +56,7 @@ class AuthManager extends Controller
         if(!$user){
             return redirect(route('halamanregister'))->with("error", "Registration Failed, try again!");
         }
-        return redirect(route('halamanlogin'))->with("success", "Registration Success!");
+        return redirect(route('halamanlogin'))->with( "success", "Registration Success!");
 
     }
 

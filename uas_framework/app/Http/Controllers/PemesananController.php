@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pemesanan;
 use App\Models\Makanan;
+use App\Models\Minuman;
 use Illuminate\Http\Request;
 
 class PemesananController extends Controller
@@ -132,7 +133,7 @@ class PemesananController extends Controller
         ]);
     }
 
-    public function addToCart($id_makanan)
+    public function addToCart($id_makanan, $id_minuman)
     {   
         // Lakukan penanganan logika untuk menambahkan makanan ke keranjang
         // Misalnya, Anda bisa menyimpan data makanan ke dalam session atau database sesuai kebutuhan aplikasi Anda.
@@ -148,12 +149,20 @@ class PemesananController extends Controller
             // Jika belum ada, tambahkan makanan ke keranjang dengan jumlah 1
             $cart[$id_makanan] = 1;
         }
+        
+        if (array_key_exists($id_minuman, $cart)) {
+            // Jika sudah ada, tambahkan jumlah pesanan makanan
+            $cart[$id_minuman]++;
+        } else {
+            // Jika belum ada, tambahkan makanan ke keranjang dengan jumlah 1
+            $cart[$id_minuman] = 1;
+        }
 
         // Simpan kembali data keranjang ke session
         session(['cart' => $cart]);
 
         return response()->json([
-            'message' => 'Makanan berhasil ditambahkan ke keranjang.',
+            'message' => 'Menu berhasil ditambahkan ke keranjang.',
         ]);
     }
 
@@ -164,6 +173,7 @@ class PemesananController extends Controller
 
     // Retrieve the makanan details from the database based on the IDs in the cart
     $makananDetails = Makanan::whereIn('id_makanan', array_keys($cart))->get();
+    $minumanDetails = Minuman::whereIn('id_minuman', array_keys($cart))->get();
 
     return view('keranjang', compact('cart', 'makananDetails'));
 }
@@ -171,12 +181,19 @@ class PemesananController extends Controller
 public function keranjang()
 {
     $makananDetails = Pemesanan::where('id_users', auth()->user()->id_users)->where('status', 0)->get();
+    $minumanDetails = Pemesanan::where('id_users', auth()->user()->id_users)->where('status', 0)->get();
     $makanan = Makanan::all();
+    $minuman = Minuman::all();
     $cart = [];
     foreach ($makananDetails as $item) {
         $cart[$item->id_makanan] = isset($cart[$item->id_makanan]) ? $cart[$item->id_makanan] + 1 : 1;
     }
     return view('keranjang', compact('makananDetails', 'makanan', 'cart'));
+
+    foreach ($minumanDetails as $item) {
+        $cart[$item->id_minuman] = isset($cart[$item->id_minuman]) ? $cart[$item->id_minuman] + 1 : 1;
+    }
+    return view('keranjang', compact('minumanDetails', 'minuman', 'cart'));
 }
 
 

@@ -62,7 +62,7 @@
       margin: 0;
       padding: 0;
     }
-
+    
     .container {
       max-width: 1200px;
       margin: 20px auto;
@@ -118,6 +118,48 @@
 </head>
 <body>
   <div class="container">
+    <section id="menu-makanan" class="menu-makanan">
+        <div class="container">
+            <h1>Menu Minuman</h1>
+            <div class="row">
+                @foreach($minuman as $minumanItem)
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $minumanItem->nama_minuman }}</h5>
+                            <p class="card-text">Rp {{ $minumanItem->harga_minuman }}</p>
+                            <button class="order-button" onclick="addToCart({{ $minumanItem->id_minuman }})">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <script>
+        function addToCart(id_minuman) {
+            // Kirim permintaan AJAX ke PemesananController untuk menambahkan makanan ke keranjang
+            fetch(`/add-to-cart/${id_minuman}`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                },
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Minuman berhasil ditambahkan ke keranjang.');
+                } else {
+                    alert('Terjadi kesalahan. minuman gagal ditambahkan ke keranjang.');
+                }
+            })
+            .catch(error => {
+                alert('Terjadi kesalahan. minuman gagal ditambahkan ke keranjang.');
+            });
+        }
+    </script>
+</div>
+
+  {{-- <div class="container">
     <h1>Menu Minuman</h1>
     <section id="menu-makanan" class="menu-makanan">
         <div class="container" >
@@ -136,7 +178,7 @@
             @endforeach
           </div>
         </div>
-      </section>
+      </section> --}}
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
